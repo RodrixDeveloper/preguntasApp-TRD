@@ -1,0 +1,13 @@
+<h4 class="card-title">{{obtenerPregunta()}}</h4>
+<ul class="list-group my-4">
+    <li class="list-group-item" *ngFor="let respuesta of listPregunta[_preguntaService.indexPregunta].respuesta; let i = index" (click)="respuestaSeleccionanda(respuesta, i)" [ngClass]="addClassOption(respuesta)" >
+        {{respuesta.nombre}}
+        <span class="material-icons correct" *ngIf="iconCorrecta(respuesta)">
+            check_circle
+        </span>
+        <span class="material-icons incorrect" *ngIf="iconInCorrecta(respuesta)">
+            clear
+        </span>
+    </li>
+</ul>
+<app-botonera></app-botonera>
